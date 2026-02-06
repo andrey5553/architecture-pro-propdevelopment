@@ -12,3 +12,10 @@
 
 [Проверочный лист](./Task2/IB.md)
 
+## Задание 3. Внешние интеграции
+
+[Диаграмма контекста для новых сервисов C4](./Task3/contextDiagram.puml)
+[Доработатка диаграммы контейнеров PropDevelopment с учетом новых сервисов drawio](./Task3/PropDevelopment_С4_model_extended.drawio)
+[Доработатка диаграммы контейнеров PropDevelopment с учетом новых сервисов png](./Task3/png/PropDevelopment_С4_model_extended.png)
+
+
