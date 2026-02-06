@@ -18,4 +18,23 @@
 [Доработатка диаграммы контейнеров PropDevelopment с учетом новых сервисов drawio](./Task3/PropDevelopment_С4_model_extended.drawio)
 [Доработатка диаграммы контейнеров PropDevelopment с учетом новых сервисов png](./Task3/png/PropDevelopment_С4_model_extended.png)
 
+## Задание 4. Защита доступа к кластеру Kubernetes
 
+[Роли и их полномочия при работе с Kubernetes](./Task4/roles.md)
+[Cкрипт для создания роли](./Task4/scripts/role-cluster-viewer.yaml)
+[Cкрипт для создания роли](./Task4/scripts/role-cluster-editor.yaml)
+[Cкрипт для создания роли](./Task4/scripts/role-cluster-admin.yaml)
+
+[Cкрипт для создания пользователя `devops-ivan-ivanych` и его привязке к роли `cluster-admin`](./Task4/scripts/add-user-cluster-admin.yaml)
+[Cкрипт для создания пользователя `qa-semen-semenovich` и его привязке к роли `cluster-viewer`](./Task4/scripts/add-user-cluster-viewer.yaml)
+
+
+[Powershell скрипты для запуска yaml нотаций k8s](./Task4/scripts/ps1/)
+
+Результат создания ролей, пользователей и их привязке к ролям, представлены на скринах:
+
+[Картинка создание роли cluster-viewer](./Task4/png/создание%20роли%20cluster-viewer.png)
+[Картинка создание роли cluster-admin](./Task4/png/создание%20роли%20cluster-admin.png)
+
+[Картинка привязка пользователя к роли cluster-viewer](./Task4/png/привязка%20пользователя%20к%20роли%20cluster-viewer.png)
+[Картинка привязка пользователя к роли cluster-admin](./Task4/png/привязка%20пользователя%20к%20роли%20cluster-admin.png)
