@@ -38,3 +38,41 @@
 
 [Картинка привязка пользователя к роли cluster-viewer](./Task4/png/привязка%20пользователя%20к%20роли%20cluster-viewer.png)
 [Картинка привязка пользователя к роли cluster-admin](./Task4/png/привязка%20пользователя%20к%20роли%20cluster-admin.png)
+
+## Задание 5. Управление трафиком внутри кластера Kubertnetes
+
+  Разворачиваем minikube с подключением политик управления трафиком (использую calico).
+  Команды:
+    # 1. Пересоздать кластер
+    minikube delete
+    minikube start --network-plugin=cni --cni=calico
+    # 2. Создаем наши сервисе в среде миникуба, а именно выполняем скрипт:
+    [Cкрипт для создания тестовых сервисов](./Task5/add_services.sh)
+    [Команда запуска в среде powershell](./Task5/ps1/add_services.ps1)
+    [Результат развертывания в openlens](./Task5/png/развертывание%204-х%20сервисов%20в%20minikube%20-%20openlens.png)
+    [Результат развертывания в среде powershell](./Task5/png/развертывание%204-х%20сервисов%20в%20minikube.png)
+    # 3. Создаем политика прохождения трафика между сервисами:
+    [Cкрипт для создания тестовых сервисов](./Task5/add_politics.sh)
+    [Команда запуска в среде powershell](./Task5/ps1/add_politics.ps1)
+    [Результат развертывания в openlens](./Task5/png/создание%20сетевых%20политик%20для%20работы%20сервисов.png)
+    [Список сетевых политик кластера](./Task5/png/список%20сетевых%20политик%20для%20нашего%20контура.png)
+  
+  Тестирование сетевых политик
+  # 1 Команда для тестирования возможности работы (получения трафика) между front-end-app и back-end-api-app
+  kubectl exec -n network-policy-assignment5 front-end-app -- curl -s --connect-timeout 5 http://back-end-api-app:80 
+  Результат: успешное получение данных (pass)
+  [Успешный результат прохождения трафика](./Task5/png/тест-трафик%20между%20front-end-app%20и%20back-end-api-app%20(pass).png)
+
+  # 2 Команда для тестирования возможности работы (получения трафика) между admin-front-end-app и admin-back-end-api-app
+  kubectl exec -n network-policy-assignment5 admin-front-end-app -- curl -s --connect-timeout 5 http://admin-back-end-app:80 
+  Результат: успешное получение данных (pass)
+  [Успешный результат прохождения трафика](./Task5/png/тест-трафик%20между%20admin-front-end-app%20и%20admin-back-end-app%20(pass).png)
+
+  # 3 Команда для тестирования возможности работы (получения трафика) между front-end-app и admin-back-end-api-app
+  kubectl exec -n network-policy-assignment5 front-end-app -- curl -s --connect-timeout 5 http://admin-back-end-app:80
+  Результат: command terminated with exit code 28 (Код 28 — это CURLE_OPERATION_TIMEDOUT, то есть curl 
+  не смог установить соединение в течение 5 секунд (таймаут --connect-timeout 5). Трафик заблокирован политиками!) (fail)
+  [Ошибка получения трафика](./Task5/png/тест-трафик%20между%20front-end-app%20и%20admin-back-end-app%20(fail).png)
+
+  
+
