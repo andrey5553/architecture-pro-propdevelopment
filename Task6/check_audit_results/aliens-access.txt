@@ -1,0 +1,118 @@
+{
+  "kind": "Event",
+  "apiVersion": "audit.k8s.io/v1",
+  "level": "Metadata",
+  "auditID": "0eaf8ebf-c683-4ed4-9f9d-0d9a8048b1b0",
+  "stage": "RequestReceived",
+  "requestURI": "/api/v1/namespaces/default/pods/suspicious-pod/exec?command=ls&command=%2Fetc&container=nginx&stderr=true&stdout=true",
+  "verb": "get",
+  "user": {
+    "username": "minikube-user",
+    "groups": [
+      "system:masters",
+      "system:authenticated"
+    ],
+    "extra": {
+      "authentication.kubernetes.io/credential-id": [
+        "X509SHA256=50ed3d0713263b8f8c5d3675c95cf9c749523598e62644edf0d9436a600bba1f"
+      ]
+    }
+  },
+  "sourceIPs": [
+    "192.168.49.1"
+  ],
+  "userAgent": "kubectl/v1.35.0 (linux/amd64) kubernetes/6645204",
+  "objectRef": {
+    "resource": "pods",
+    "namespace": "default",
+    "name": "suspicious-pod",
+    "apiVersion": "v1",
+    "subresource": "exec"
+  },
+  "requestReceivedTimestamp": "2026-02-09T14:26:52.199692Z",
+  "stageTimestamp": "2026-02-09T14:26:52.199692Z"
+}
+{
+  "kind": "Event",
+  "apiVersion": "audit.k8s.io/v1",
+  "level": "Metadata",
+  "auditID": "0eaf8ebf-c683-4ed4-9f9d-0d9a8048b1b0",
+  "stage": "ResponseStarted",
+  "requestURI": "/api/v1/namespaces/default/pods/suspicious-pod/exec?command=ls&command=%2Fetc&container=nginx&stderr=true&stdout=true",
+  "verb": "get",
+  "user": {
+    "username": "minikube-user",
+    "groups": [
+      "system:masters",
+      "system:authenticated"
+    ],
+    "extra": {
+      "authentication.kubernetes.io/credential-id": [
+        "X509SHA256=50ed3d0713263b8f8c5d3675c95cf9c749523598e62644edf0d9436a600bba1f"
+      ]
+    }
+  },
+  "sourceIPs": [
+    "192.168.49.1"
+  ],
+  "userAgent": "kubectl/v1.35.0 (linux/amd64) kubernetes/6645204",
+  "objectRef": {
+    "resource": "pods",
+    "namespace": "default",
+    "name": "suspicious-pod",
+    "apiVersion": "v1",
+    "subresource": "exec"
+  },
+  "responseStatus": {
+    "metadata": {},
+    "code": 101
+  },
+  "requestReceivedTimestamp": "2026-02-09T14:26:52.199692Z",
+  "stageTimestamp": "2026-02-09T14:26:52.204644Z",
+  "annotations": {
+    "authorization.k8s.io/decision": "allow",
+    "authorization.k8s.io/reason": ""
+  }
+}
+{
+  "kind": "Event",
+  "apiVersion": "audit.k8s.io/v1",
+  "level": "Metadata",
+  "auditID": "0eaf8ebf-c683-4ed4-9f9d-0d9a8048b1b0",
+  "stage": "ResponseComplete",
+  "requestURI": "/api/v1/namespaces/default/pods/suspicious-pod/exec?command=ls&command=%2Fetc&container=nginx&stderr=true&stdout=true",
+  "verb": "get",
+  "user": {
+    "username": "minikube-user",
+    "groups": [
+      "system:masters",
+      "system:authenticated"
+    ],
+    "extra": {
+      "authentication.kubernetes.io/credential-id": [
+        "X509SHA256=50ed3d0713263b8f8c5d3675c95cf9c749523598e62644edf0d9436a600bba1f"
+      ]
+    }
+  },
+  "sourceIPs": [
+    "192.168.49.1"
+  ],
+  "userAgent": "kubectl/v1.35.0 (linux/amd64) kubernetes/6645204",
+  "objectRef": {
+    "resource": "pods",
+    "namespace": "default",
+    "name": "suspicious-pod",
+    "apiVersion": "v1",
+    "subresource": "exec"
+  },
+  "responseStatus": {
+    "metadata": {},
+    "code": 101
+  },
+  "requestReceivedTimestamp": "2026-02-09T14:26:52.199692Z",
+  "stageTimestamp": "2026-02-09T14:26:52.224218Z",
+  "annotations": {
+    "authorization.k8s.io/decision": "allow",
+    "authorization.k8s.io/reason": ""
+  }
+}

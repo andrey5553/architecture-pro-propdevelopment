@@ -1,0 +1,25 @@
+apiVersion: audit.k8s.io/v1
+kind: Policy
+rules:
+  # Подробное логирование для важных операций
+  - level: RequestResponse
+    verbs: ["create", "delete", "update", "patch", "get", "list"]
+    resources:
+      - group: ""
+        resources: ["pods", "secrets", "configmaps", "serviceaccounts", "roles", "rolebindings"]
+  
+  # Логирование запросов (без тел ответов) для просмотра
+  - level: Request
+    verbs: ["get", "list", "watch"]
+    resources:
+      - group: ""
+        resources: ["pods", "secrets", "configmaps", "serviceaccounts"]
+  
+  # Метаданные для всего остального
+  - level: Metadata
+    resources:
+      - group: "*"
+        resources: ["*"]
+    omitStages:
+      - "RequestReceived"
+      

@@ -4,40 +4,39 @@
 
 ## Задание 1. Разработка проверочного листа по безопасности данных
 
-[mindmap drawio](./Task1/mindmap.drawio)
-[mindmap png](./Task1/mindmap.png)
-[Описание](./Task1/README.md)
+  [mindmap drawio](./Task1/mindmap.drawio)
+  [mindmap png](./Task1/mindmap.png)
+  [Описание](./Task1/README.md)
 
 ## Задание 2. Разработка и заполнение проверочного листа для бизнес-систем
 
-[Проверочный лист](./Task2/IB.md)
+  [Проверочный лист](./Task2/IB.md)
 
 ## Задание 3. Внешние интеграции
 
-[Диаграмма контекста для новых сервисов C4](./Task3/contextDiagram.puml)
-[Доработатка диаграммы контейнеров PropDevelopment с учетом новых сервисов drawio](./Task3/PropDevelopment_С4_model_extended.drawio)
-[Доработатка диаграммы контейнеров PropDevelopment с учетом новых сервисов png](./Task3/png/PropDevelopment_С4_model_extended.png)
+  [Диаграмма контекста для новых сервисов C4](./Task3/contextDiagram.puml)
+  [Доработатка диаграммы контейнеров PropDevelopment с учетом новых сервисов drawio](./Task3/PropDevelopment_С4_model_extended.drawio)
+  [Доработатка диаграммы контейнеров PropDevelopment с учетом новых сервисов png](./Task3/png/PropDevelopment_С4_model_extended.png)
 
-## Задание 4. Защита доступа к кластеру Kubernetes
+## Задание 4. Защита доступа к кластеру Kubernet
+  [Роли и их полномочия при работе с Kubernetes](./Task4/roles.md)
+    
+  [Cкрипт для создания роли](./Task4/scripts/role-cluster-viewer.yaml)
+  [Cкрипт для создания роли](./Task4/scripts/role-cluster-editor.yaml)
+  [Cкрипт для создания роли](./Task4/scripts/role-cluster-admin.yaml)
 
-[Роли и их полномочия при работе с Kubernetes](./Task4/roles.md)
-[Cкрипт для создания роли](./Task4/scripts/role-cluster-viewer.yaml)
-[Cкрипт для создания роли](./Task4/scripts/role-cluster-editor.yaml)
-[Cкрипт для создания роли](./Task4/scripts/role-cluster-admin.yaml)
+  [Cкрипт для создания пользователя `devops-ivan-ivanych` и его привязке к роли `cluster-admin`](./Task4/scripts/add-user-cluster-admin.yaml)
+  [Cкрипт для создания пользователя `qa-semen-semenovich` и его привязке к роли `cluster-viewer`](./Task4/scripts/add-user-cluster-viewer.yaml)
 
-[Cкрипт для создания пользователя `devops-ivan-ivanych` и его привязке к роли `cluster-admin`](./Task4/scripts/add-user-cluster-admin.yaml)
-[Cкрипт для создания пользователя `qa-semen-semenovich` и его привязке к роли `cluster-viewer`](./Task4/scripts/add-user-cluster-viewer.yaml)
+  [Powershell скрипты для запуска yaml нотаций k8s](./Task4/scripts/ps1/)
 
+  Результат создания ролей, пользователей и их привязке к ролям, представлены на скринах:
 
-[Powershell скрипты для запуска yaml нотаций k8s](./Task4/scripts/ps1/)
+  [Картинка создание роли cluster-viewer](./Task4/png/создание%20роли%20cluster-viewer.png)
+  [Картинка создание роли cluster-admin](./Task4/png/создание%20роли%20cluster-admin.png)
 
-Результат создания ролей, пользователей и их привязке к ролям, представлены на скринах:
-
-[Картинка создание роли cluster-viewer](./Task4/png/создание%20роли%20cluster-viewer.png)
-[Картинка создание роли cluster-admin](./Task4/png/создание%20роли%20cluster-admin.png)
-
-[Картинка привязка пользователя к роли cluster-viewer](./Task4/png/привязка%20пользователя%20к%20роли%20cluster-viewer.png)
-[Картинка привязка пользователя к роли cluster-admin](./Task4/png/привязка%20пользователя%20к%20роли%20cluster-admin.png)
+  [Картинка привязка пользователя к роли cluster-viewer](./Task4/png/привязка%20пользователя%20к%20роли%20cluster-viewer.png)
+  [Картинка привязка пользователя к роли cluster-admin](./Task4/png/привязка%20пользователя%20к%20роли%20cluster-admin.png)
 
 ## Задание 5. Управление трафиком внутри кластера Kubertnetes
 
@@ -74,5 +73,27 @@
   не смог установить соединение в течение 5 секунд (таймаут --connect-timeout 5). Трафик заблокирован политиками!) (fail)
   [Ошибка получения трафика](./Task5/png/тест-трафик%20между%20front-end-app%20и%20admin-back-end-app%20(fail).png)
 
+## Задание 6. Аудит активности пользователей и обнаружение инцидентов
   
+  [Настройка политик аудита в кластере minikube приведена в файле](/Task6/README.md)
+
+  Результаты:
+  [Краткий отчёт по выявленным событиям](/Task6/analysis.md)
+  [Выжимка из audit.log](/Task6/audit-extract-20260209_185624.json)
+  [Скрипт фильтрации](/Task6/filter.sh)
+
+  [Общая статистика анализа логов для аудита](/Task6/png/общая%20статистика%20анализа%20логов%20для%20аудита.png)
+  [АНАЛИЗ HIGH-СОБЫТИЙ АУДИТА](/Task6/high-events-analysis.md)
+
+  [Запуск скрипта с симуляцией действий](/Task6/png/запуск%20скрипта%20с%20симуляцией%20действий.png)
+  
+
+
+  
+
+
+  
+
+
+
 
